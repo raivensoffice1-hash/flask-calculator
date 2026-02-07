@@ -69,6 +69,10 @@
         <button onclick="append('9')">9</button>
         <button onclick="append('+')" class="operator">+</button>
 
+
+        <button onclick="backspace()">⌫</button>
+        <button onclick="clearDisplay()">C</button>
+
         <button onclick="append('4')">4</button>
         <button onclick="append('5')">5</button>
         <button onclick="append('6')">6</button>
@@ -79,6 +83,7 @@
         <button onclick="append('3')">3</button>
         <button onclick="append('.')">.</button>
 
+        
         <button onclick="append('0')" style="grid-column: span 4;">0</button>
     </div>
 </div>
@@ -92,6 +97,11 @@
         document.getElementById("display").value = "";
     }
 
+    function backspace() {
+        let current = document.getElementById("display").value;
+        document.getElementById("display").value = current.slice(0, -1);
+    }
+
     function calculate() {
         try {
             document.getElementById("display").value =
@@ -101,6 +111,9 @@
         }
     }
 </script>
+
+
+
 
 </body>
 </html>
